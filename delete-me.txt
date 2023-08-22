@@ -1,0 +1,19 @@
+npm i @headlessui/react
+@reduxjs/toolkit
+react-redux
+tailwindcss
+react-router-dom
+
+
+npm i react-accessible-accordion
+
+
+npm i react-select-async-paginate
+
+npm i axios
+
+
+npm i react-google-autocomplete
+
+
+npm i @react-google-maps/api google-map-react
