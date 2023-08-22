@@ -42,7 +42,6 @@ const MainPage = () => {
     const formattedMinutes = String(minutes).padStart(2, "0");
     // Construct the final formatted time string
     const formattedTime = `${formattedHours}:${formattedMinutes} ${ampm}`;
-    console.log(formattedTime); // Output: "11:00 PM"
 
     return formattedTime;
   };
@@ -95,7 +94,6 @@ const MainPage = () => {
     try {
       if (search) {
         const response = await axios.get(openWeatherCurrentUrl);
-        console.log("Weather data:", response.data);
         setWeatherData(response.data);
         if (response.data.coord) {
           setLat(response.data.coord.lat);
@@ -119,9 +117,7 @@ const MainPage = () => {
     try {
       if (lat !== null && lon !== null) {
         const response = await axios.request(options);
-        console.log("One Call Weather data:", response.data);
         setHourlyForcast(response.data);
-        // Handle the one call weather data here as needed
       }
     } catch (error) {
       console.error("Error fetching one call weather data:", error);
@@ -140,7 +136,6 @@ const MainPage = () => {
 
     try {
       const response = await axios.request(options);
-      console.log("fetchFiveDayForcast", response.data);
       setFiveDaysForecast(response.data);
     } catch (error) {
       console.error(error);

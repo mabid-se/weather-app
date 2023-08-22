@@ -9,11 +9,10 @@ function classNames(...classes) {
 
 const ThemeToggler = () => {
   const themeValue = useSelector((state) => state.theme.theme);
-  console.log("theme value", themeValue);
+
   const dispatch = useDispatch();
   const htmlDoc = document.documentElement;
   const themeSytem = window.matchMedia("(prefers-color-scheme: dark)");
-  console.log("theme system: ", themeSytem);
 
   const [activeTheme, setActiveTheme] = useState("dark");
 
