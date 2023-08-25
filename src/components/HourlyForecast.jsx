@@ -47,7 +47,7 @@ const HourlyForecast = ({ hourlyForcast }) => {
 
   return (
     <>
-      <div className="md:hidden my-3 mx-2 py-4 px-2 rounded-lg shadow-xl bg-[#F8FAFC] dark:bg-[#202b3b]">
+      <div className="md:hidden my-6 mx-2 py-4 px-2 rounded-lg shadow-xl bg-[#F8FAFC] dark:bg-[#202b3b]">
         <div className="flex flex-row justify-between">
           <div className="flex flex-col justify-center">
             <div>

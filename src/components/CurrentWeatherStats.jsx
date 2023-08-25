@@ -58,7 +58,7 @@ const CurrentWeatherStats = ({ weatherData }) => {
 
   return (
     <>
-      <div className="sm:hidden mx-2 px-4 rounded-lg shadow-xl bg-[#F8FAFC] dark:bg-[#202b3b]">
+      <div className="sm:hidden my-6 mx-2 px-4 rounded-lg shadow-xl bg-[#F8FAFC] dark:bg-[#202b3b]">
         {weatherStats.map((item, index) => (
           <div
             key={index}

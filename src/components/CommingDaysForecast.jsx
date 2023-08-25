@@ -25,7 +25,7 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
   return (
     <>
       <div className="md:hidden my-6">
-        <div className="mx-3 p-4 rounded-lg shadow-xl bg-[#F8FAFC] dark:bg-[#202b3b]">
+        <div className="mx-2 p-4 rounded-lg shadow-xl bg-[#F8FAFC] dark:bg-[#202b3b]">
           <div className="flex flex-row justify-between">
             <div className="flex flex-col justify-center">
               <div>
