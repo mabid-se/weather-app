@@ -79,7 +79,7 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                 Daily Forecast
               </h6>
             </div>
-            <div className="mt-2 flex flex-row gap-x-3 lg:gap-x-6">
+            <div className="mt-2 flex flex-row gap-x-3 lg:gap-x-8">
               {dailyIndex.map((item, index) => (
                 <div
                   key={index}
@@ -89,7 +89,7 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                       : ""
                   }`}
                 >
-                  <h6 className="mt-1 capitalize text-[#334155] dark:text-[#94a3b8] text-sm font-medium">
+                  <h6 className="mt-1 capitalize text-[#334155] dark:text-[#94a3b8] text-sm font-medium text-center">
                     {item.day}
                   </h6>
                   <div className="flex justify-center">
@@ -107,11 +107,9 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                       className="my-2"
                     />
                   </div>
-                  <div className="flex justify-center">
-                    <h6 className="mt-1 text-[#334155] dark:text-[#94a3b8] text-xl font-bold">
-                      {item.temp}&deg;
-                    </h6>
-                  </div>
+                  <h6 className="mt-1 text-[#334155] dark:text-[#94a3b8] text-xl font-bold text-center">
+                    {item.temp}&deg;
+                  </h6>
                 </div>
               ))}
             </div>
