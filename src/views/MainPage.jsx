@@ -106,7 +106,7 @@ const MainPage = () => {
 
   useEffect(() => {
     if (lat !== null && lon !== null) {
-      // fetchHourlyForcast();
+      fetchHourlyForcast();
       fetchFiveDayForcast();
     }
   }, [lat, lon]);
@@ -137,10 +137,10 @@ const MainPage = () => {
             {weatherData && <CityCurrentWeather weatherData={weatherData} />}
             {hourlyForcast && <HourlyForecast hourlyForcast={hourlyForcast} />}
             {weatherData && <CurrentWeatherStats weatherData={weatherData} />}
-            {/* <CommingDaysForecast /> */}
-            {fiveDaysForecast && (
+            <CommingDaysForecast fiveDaysForecast={fiveDaysForecast} />
+            {/* {fiveDaysForecast && (
               <CommingDaysForecast fiveDaysForecast={fiveDaysForecast} />
-            )}
+            )} */}
           </div>
         </div>
       </div>

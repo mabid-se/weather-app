@@ -6,45 +6,21 @@ import lightRain from "../assets/images/weather-app.png";
 
 const CommingDaysForecast = ({ fiveDaysForecast }) => {
   const dailyIndex = [
-    { id: 9, label: "clear sky" },
-    { id: 17, label: "heavy rain" },
-    { id: 25, label: "thunderstrom" },
-    { id: 33, label: "lightr rain" },
-    { id: 41, label: "clear sky" },
-    { id: 49, label: "heavy rain" },
-    { id: 57, label: "thunderstrom" },
+    { id: 9, day: "monday", dayMo: "mon", label: "clear sky", temp: 23 },
+    { id: 17, day: "tuesday", dayMo: "tue", label: "heavy rain", temp: 34 },
+    { id: 25, day: "wednesday", dayMo: "wed", label: "thunderstrom", temp: 32 },
+    { id: 33, day: "thursday", dayMo: "thu", label: "lightr rain", temp: 29 },
+    { id: 41, day: "friday", dayMo: "fri", label: "clear sky", temp: 33 },
+    { id: 49, day: "saturday", dayMo: "sat", label: "heavy rain", temp: 37 },
+    { id: 57, day: "sunday", dayMo: "sun", label: "thunderstrom", temp: 30 },
   ];
   const dailyIndexMo = [
-    { id: 9, label: "clear sky" },
-    { id: 17, label: "heavy rain" },
-    { id: 25, label: "thunderstrom" },
-    { id: 33, label: "lightr rain" },
-    { id: 41, label: "clear sky" },
+    { id: 9, day: "monday", dayMo: "mon", label: "clear sky", temp: 23 },
+    { id: 17, day: "tuesday", dayMo: "tue", label: "heavy rain", temp: 34 },
+    { id: 25, day: "wednesday", dayMo: "wed", label: "thunderstrom", temp: 32 },
+    { id: 33, day: "thursday", dayMo: "thu", label: "lightr rain", temp: 29 },
+    { id: 41, day: "friday", dayMo: "fri", label: "clear sky", temp: 33 },
   ];
-
-  const kToC = (temp) => {
-    return (temp - 273.15).toFixed(0);
-  };
-
-  const weekdayExtractor = (time) => {
-    const dateString = time;
-    const date = new Date(dateString);
-    const moDaysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-    const daysOfWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    const dayOfWeek = {
-      moLabel: moDaysOfWeek[date.getDay()],
-      desLabel: daysOfWeek[date.getDay()],
-    };
-    return dayOfWeek;
-  };
 
   return (
     <>
@@ -64,12 +40,8 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                     className="grid grid-flow-row auto-rows-max gap-2 px-2"
                   >
                     <div>
-                      <h6 className="mt-1 text-[#334155] dark:text-[#94a3b8] text-sm font-medium text-center">
-                        {/* Mon */}
-                        {
-                          weekdayExtractor(fiveDaysForecast.list[item].dt_txt)
-                            .moLabel
-                        }
+                      <h6 className="mt-1 capitalize text-[#334155] dark:text-[#94a3b8] text-sm font-medium text-center">
+                        {item.dayMo}
                       </h6>
                     </div>
                     <div className="flex justify-center">
@@ -89,8 +61,7 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                     </div>
                     <div>
                       <h6 className="mt-1 text-[#334155] dark:text-[#94a3b8] text-xl font-bold text-center">
-                        {/* 34&deg; */}
-                        {kToC(fiveDaysForecast.list[item].main.temp)}&deg;
+                        {item.temp}&deg;
                       </h6>
                     </div>
                   </div>
@@ -118,9 +89,8 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                       : ""
                   }`}
                 >
-                  <h6 className="mt-1 text-[#334155] dark:text-[#94a3b8] text-sm font-medium">
-                    {/* Monday */}
-                    {weekdayExtractor(fiveDaysForecast.list[item].dt_txt)}
+                  <h6 className="mt-1 capitalize text-[#334155] dark:text-[#94a3b8] text-sm font-medium">
+                    {item.day}
                   </h6>
                   <div className="flex justify-center">
                     <img
@@ -139,8 +109,7 @@ const CommingDaysForecast = ({ fiveDaysForecast }) => {
                   </div>
                   <div className="flex justify-center">
                     <h6 className="mt-1 text-[#334155] dark:text-[#94a3b8] text-xl font-bold">
-                      {/* 34&deg; */}
-                      {kToC(fiveDaysForecast.list[item].main.temp)}&deg;
+                      {item.temp}&deg;
                     </h6>
                   </div>
                 </div>
